@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  },
+  "scripts": {
+    "front": "npm run start --prefix mes-calc-frontend",
+    "back": "npm run dev --prefix mes-calc-backend",
+    "dev": "concurrently -k -n FRONT,BACK -c cyan,magenta \"npm run front\" \"npm run back\"",
+    "build": "npm run build --prefix mes-calc-frontend",
+    "start:back": "npm run dev --prefix mes-calc-backend"
+  }
+}
