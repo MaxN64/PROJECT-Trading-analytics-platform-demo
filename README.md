@@ -22,6 +22,36 @@ Models & indexes: well-designed Trade schema with indexes (by user/date/net resu
 
 Practices: centralized error handling, simple (but extensible) auth, separation of concerns by layers.
 
+
+
+![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210016.png)
+
+![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210037.png)
+
+![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210059.png)
+
+![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210115.png)
+
+![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210128.png)
+
+![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210139.png)
+
+![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210150.png)
+
+![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210233.png)
+
+![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210249.png)
+
+![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210302.png)
+
+![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210327.png)
+
+![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210405.png)
+
+![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210420.png)
+
+![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210504.png)
+
 1) Frontend — mes-calc-frontend
 Stack & dependencies
 
@@ -245,30 +275,3 @@ POST /api/integrations/volfix/import?dry=1&update=1&instrument=ES&tickSize=0.25&
 
 
 
-![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210016.png)
-
-![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210037.png)
-
-![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210059.png)
-
-![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210115.png)
-
-![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210128.png)
-
-![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210139.png)
-
-![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210150.png)
-
-![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210233.png)
-
-![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210249.png)
-
-![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210302.png)
-
-![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210327.png)
-
-![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210405.png)
-
-![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210420.png)
-
-![Превью проекта](https://github.com/MaxN64/PROJECT-Trading-analytics-platform-demo/blob/master/mes-calc-frontend/public/docs/210504.png)
