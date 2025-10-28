@@ -1,0 +1,26 @@
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0 8px 24px -12px rgba(0,0,0,.25);
+  min-width: 0;  
+}
+.head { display:flex; align-items:center; justify-content:space-between; margin-bottom: 8px; }
+.head h3 { margin:0; font-size:16px; font-weight:700; color:var(--fg-strong); }
+.meta { font-size:12px; color:var(--muted-strong); display:flex; align-items:center; gap:8px; }
+.dot { width:8px; height:8px; border-radius:50%; background:var(--accent); display:inline-block; }
+
+.chartsGrid {
+   display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+
+@media (max-width: 1100px) { .chartsGrid { grid-template-columns: 1fr; } }
+
+.chartBox { border:1px solid var(--border); border-radius:12px; padding:10px; background:var(--panel-ghost); }
+.chartTitle { font-size:13px; color:var(--muted-strong); margin-bottom:6px; }
+.hint { margin-top:6px; font-size:12px; color:var(--muted); }
+
+/* цвета линий/сеток через css-переменные темы */
+:root, [data-theme="light"], [data-theme="dark"] {
+  --grid: rgba(128,128,128,.25);
+}

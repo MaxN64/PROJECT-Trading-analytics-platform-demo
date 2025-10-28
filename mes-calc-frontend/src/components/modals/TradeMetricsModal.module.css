@@ -1,0 +1,30 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 10px;
+}
+.field { display: grid; gap: 4px; font-size: 12px; }
+.field > span { color: var(--muted-strong); }
+.field input, .field select {
+  width: 100%;
+  border:1px solid var(--border); border-radius:10px;
+  background: var(--input-bg); color: var(--fg);
+  padding:6px 8px;
+}
+
+.preview {
+  margin-top: 12px;
+  display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 8px;
+  background: var(--panel-ghost);
+  border:1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+}
+.stat { display:flex; justify-content:space-between; }
+
+.btn {
+  padding: 8px 12px; border:1px solid var(--border);
+  background: transparent; color: var(--fg);
+  border-radius: 10px; cursor: pointer;
+}
+.primary { border-color: #3b82f6; color:#fff; background:#3b82f6; }

@@ -1,0 +1,285 @@
+.panel {
+  position: fixed;
+  top: 530px;
+  right: 24px;
+  z-index: 30;
+  width: 500px;
+  max-height: calc(100svh - 120px);
+  color: var(--fg);
+}
+
+.open { pointer-events: auto; }
+.closed { width: auto; }
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--fg);
+  padding: 8px 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px -10px rgba(0,0,0,.5);
+}
+.toggle:hover { background: var(--panel-ghost); }
+.toggleTxt { font-size: 15px; font-weight: 800; color: var(--muted-strong); }
+.badge {
+  margin-left: 4px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #000;
+  font-weight: 700;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  margin-top: 10px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px -12px rgba(0,0,0,.6);
+  position: relative; /* для позиционирования кружков */
+}
+
+/* Кружки направления — верхний правый угол */
+.dirPicker {
+  position: absolute;
+  top: 8px;      /* отступ сверху */
+  right: 10px;   /* отступ справа */
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.dirBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+  color: #fff;
+  cursor: pointer;
+  transition: transform .08s ease, box-shadow .12s ease, background .12s ease;
+}
+.dirBtn:active { transform: translateY(1px); }
+
+.long { background: #16a34a; }   /* зелёный — ЛОНГ */
+.short { background: #dc2626; }  /* красный — ШОРТ */
+
+.active {
+  box-shadow: 0 0 0 2px #000 inset, 0 0 0 2px rgba(255,255,255,.6);
+  outline: none;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel-ghost);
+}
+.title { font-size: 16px; font-weight: 700; color: var(--fg-strong); }
+.counter { font-size: 14px; color: var(--muted); }
+
+.list {
+  padding: 8px 6px;
+  max-height: 48vh;
+  overflow: auto;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  transition: background .15s;
+  cursor: pointer;
+}
+.item:hover { background: var(--panel-ghost); }
+.item input { display: none; }
+
+.check {
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--input-bg);
+  position: relative;
+}
+.item input:checked + .check {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.item input:checked + .check::after {
+  content: "";
+  position: absolute;
+  left: 5px; top: 1px;
+  width: 5px; height: 10px;
+  border: solid #0b0c10;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.label { font-size: 15px; color: var(--fg); }
+
+.actions {
+  padding: 10px 12px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  background: var(--panel-ghost);
+}
+.btnGhost {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted-strong);
+  cursor: pointer;
+}
+.btnGhost:hover { background: var(--panel); }
+
+.btnPrimary {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btnPrimary[disabled] {
+  opacity: .5;
+  cursor: not-allowed;
+}
+/* существующие стили оставляем как есть */
+
+.headerRow {
+  position: relative;            /* чтобы можно было прижать блок вправо */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel-ghost);
+}
+
+/* === КНОПКИ НАПРАВЛЕНИЯ (правый верхний угол) === */
+.dirWrap {
+  margin-left: auto;             /* уводим к правому краю строки заголовка */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 6px;            /* аккуратный правый отступ */
+}
+
+.dirBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--panel);      /* фон кружка по умолчанию */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+
+.dirBtn:hover { transform: translateY(-1px); }
+.dirBtn.on {
+  box-shadow: 0 0 0 3px rgba(255,255,255,.08) inset, 0 6px 18px -8px rgba(0,0,0,.5);
+}
+
+/* зелёный / лонг */
+.dirLong.on { background: #10b981; border-color: #10b981; }
+.dirLong .arrowUp,
+.dirShort .arrowDown { width: 0; height: 0; }
+
+/* красный / шорт */
+.dirShort.on { background: #ef4444; border-color: #ef4444; }
+
+/* стрелки — делаем из CSS треугольников, они всегда белые */
+.arrowUp {
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 11px solid #ffffff;
+}
+.arrowDown {
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 11px solid #ffffff;
+}
+
+/* когда не активна — стрелка темнее, чтобы не "кричала" */
+.dirLong:not(.on) .arrowUp { border-bottom-color: #9ca3af; }
+.dirShort:not(.on) .arrowDown { border-top-color: #9ca3af; }
+
+/* блок действий */
+.actions {
+  padding: 10px 12px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  background: var(--panel-ghost);
+}
+
+/* кнопка сохранить — неактивная */
+.btnPrimary:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+.closeX {
+  background: transparent;
+  border: none;
+  color: var(--muted-strong);
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 6px;
+  margin-right: 6px;   /* чтобы не лип к заголовку */
+  border-radius: 6px;
+}
+.closeX:hover { background: var(--panel); color: var(--fg-strong); }
+.closeX:active { transform: translateY(1px); }
+
+
+/* адаптив — ничего доп. не нужно, но если места мало, пусть иконки не уезжают */
+@media (max-width: 480px) {
+  .dirBtn { width: 34px; height: 34px; }
+}
+
+
+
+@media (max-width: 900px) {
+  .panel { right: 12px; width: min(86vw, 380px); }
+}
+@media (max-width: 640px) {
+  .panel {
+    top: auto;
+    bottom: 18px;
+    right: 12px;
+    max-height: 68vh;
+  }
+}

@@ -1,0 +1,115 @@
+html, body, #root { height: 100%; }
+* { box-sizing: border-box; }
+
+/* Корневой контейнер приложения */
+.app {
+  min-height: 100svh;
+  background: var(--bg);
+  color: var(--fg);
+  display: grid;
+  grid-template-rows: auto 1fr;   /* шапка (sticky внутри Header) + контент */
+}
+
+/* Внутренний контейнер контента страницы */
+.content {
+  padding: 16px 24px 24px;
+}
+
+/* ===== Сетка основных карточек ===== */
+.grid {
+  margin: 20px auto;
+  max-width: 1400px;
+  width: 100%;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.grid > * { min-width: 0; }
+
+.grid > *:nth-child(1) { grid-column: span 7; }
+.grid > *:nth-child(2) { grid-column: span 5; }
+.grid > *:nth-child(n+3) { grid-column: 1 / -1; }
+
+/* Утилита для «широких» блоков */
+.fullRow { grid-column: 1 / -1; }
+
+/* ====== сетка для аналитических карточек ====== */
+.analyticsGrid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 900px) {
+  .grid > * { grid-column: 1 / -1 !important; }
+  .analyticsGrid { grid-template-columns: 1fr; }
+}
+
+/* ====== скелетоны для Suspense ====== */
+.cardSkel {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel);
+  padding: 12px;
+}
+.cardSkelTitle {
+  height: 14px;
+  width: 40%;
+  background: var(--panel-ghost);
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+.cardSkelBody {
+  height: 160px;
+  background: var(--panel-ghost);
+  border-radius: 8px;
+}
+
+/* формы/таблицы (как было) */
+.formGrid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+}
+@media (max-width: 640px) {
+  .formGrid { grid-template-columns: 1fr; }
+}
+
+.statsGrid, .statsGridThree {
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+}
+.statsGrid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.statsGridThree { grid-template-columns: repeat(3, minmax(0,1fr)); }
+@media (max-width: 640px) {
+  .statsGridThree { grid-template-columns: 1fr; }
+}
+
+.noteWarn {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--warn-border);
+  background: var(--warn-bg);
+  color: var(--warn-fg);
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.formulaBox {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--panel-ghost);
+  border: 1px dashed var(--border);
+  color: var(--muted-strong);
+  font-size: 14px;
+}
+
+.footer {
+  margin-top: 10px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  opacity: .9;
+}

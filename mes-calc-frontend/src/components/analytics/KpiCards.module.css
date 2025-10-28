@@ -1,0 +1,10 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0,1fr));
+  gap: 10px;
+}
+.card { border:1px solid var(--border); border-radius:12px; background:var(--panel); padding:10px; }
+.label { color: var(--muted-strong); font-size:12px; }
+.value { font-size: 20px; font-weight: 700; margin-top:4px; }
+@media (max-width: 1200px){ .grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+@media (max-width: 700px){ .grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }

@@ -1,0 +1,14 @@
+.wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.bar {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel-ghost);
+  padding: 8px;
+  display: grid;
+  gap: 6px;
+}
+.head { display: flex; justify-content: space-between; color: var(--muted-strong); }
+.track { height: 8px; background: rgba(255,255,255,.08); border-radius: 999px; overflow: hidden; }
+.fill { height: 100%; background: #3b82f6; }
+.warn .fill { background: #ef4444; }
+.note { color:#ef4444; font-size: 12px; }

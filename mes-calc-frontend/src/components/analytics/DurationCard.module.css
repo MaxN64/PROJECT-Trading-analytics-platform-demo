@@ -1,0 +1,5 @@
+.card{ border:1px solid var(--border); border-radius:12px; padding:12px; background:var(--panel); }
+.table{ width:100%; border-collapse:collapse; font-size:13px; }
+th,td{ border:1px dashed var(--border); padding:6px 8px; text-align:right; }
+th:first-child, td:first-child{ text-align:left; }
+.pos{ color:#10b981; } .neg{ color:#ef4444; }

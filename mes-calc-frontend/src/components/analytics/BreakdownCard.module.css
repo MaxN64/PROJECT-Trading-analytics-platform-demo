@@ -1,0 +1,7 @@
+.card{ border:1px solid var(--border); border-radius:12px; padding:12px; background:var(--panel); }
+.columns{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.table{ width:100%; border-collapse:collapse; font-size:13px; }
+th,td{ border:1px dashed var(--border); padding:6px 8px; text-align:right; }
+th:first-child, td:first-child{ text-align:left; }
+.pos{ color:#10b981; } .neg{ color:#ef4444; }
+@media (max-width:900px){ .columns{ grid-template-columns:1fr; } }

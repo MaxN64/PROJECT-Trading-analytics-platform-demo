@@ -1,0 +1,108 @@
+
+.bar {
+  position: relative;           /* для абсолютной кнопки */
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 8px 24px -12px rgba(0,0,0,.25);
+  display: grid;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Кнопка сворачивания в правом верхнем углу */
+.collapseBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel-ghost);
+  color: var(--fg);
+  font-size: 12px;
+  cursor: pointer;
+}
+.collapseBtn:hover { background: var(--input-bg); }
+
+/* Свернутое состояние: скрываем пресеты и сетку полей */
+.collapsed .presets,
+.collapsed .grid {
+  display: none !important;
+}
+
+/* Немного ужимаем отступы в свернутом виде */
+.collapsed {
+  padding-bottom: 8px;
+}
+
+/* Остальные ваши стили ниже... */
+
+/* ... существующие стили .left .title .badge ... */
+
+
+
+.bar {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 8px 24px -12px rgba(0,0,0,.25);
+  display: grid;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.left { display:flex; align-items:center; gap:8px; }
+.title { font-size:14px; color:var(--fg-strong); }
+.badge, .badgeActive {
+  font-size:11px; padding:2px 8px; border-radius:999px; border:1px solid var(--border);
+}
+.badge { color:var(--muted); background:var(--panel-ghost); }
+.badgeActive { color:#0b0c10; background:var(--accent); border-color:var(--accent); }
+.meta { font-size:12px; color:var(--muted); }
+
+.grid {
+  display:grid; gap:8px;
+  grid-template-columns: repeat(6, minmax(0,1fr));
+}
+@media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+@media (max-width: 640px) { .grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+
+.field { display:grid; gap:4px; font-size:12px; color:var(--muted-strong); }
+.field input, .field select {
+  padding:8px 10px; border-radius:10px; border:1px solid var(--border);
+  background:var(--input-bg); color:var(--fg);
+}
+
+.conditions summary {
+  cursor: pointer; user-select:none;
+  padding:8px 10px; border:1px solid var(--border); border-radius:10px;
+  background:var(--panel-ghost); color:var(--fg);
+}
+.condBody { padding:8px 2px; display:grid; gap:8px; }
+.matchToggle { display:inline-flex; align-items:center; gap:8px; color:var(--muted-strong); font-size:12px; }
+.matchToggle input { display:none; }
+.matchToggle span {
+  width:36px; height:20px; background:#7f1d1d; border:1px solid var(--border); border-radius:999px; position:relative;
+}
+.matchToggle input:checked + span { background:#14532d; }
+.matchToggle span::after {
+  content:""; position:absolute; width:16px; height:16px; border-radius:50%; background:#fff; top:1px; left:1px; transition:transform .15s;
+}
+.matchToggle input:checked + span::after { transform: translateX(16px); }
+
+.condList { display:grid; gap:6px; max-height:220px; overflow:auto; padding-right:4px; }
+.condItem { display:grid; grid-template-columns: 18px 1fr; align-items:center; gap:8px; font-size:13px; }
+.condItem input { display:none; }
+.box { width:16px; height:16px; border:1px solid var(--border); border-radius:6px; background:var(--input-bg); position:relative; }
+.condItem input:checked + .box { background:var(--accent); border-color:var(--accent); }
+.condItem input:checked + .box::after {
+  content:""; position:absolute; left:4px; top:2px; width:4px; height:8px; border:solid #0b0c10; border-width:0 2px 2px 0; transform:rotate(45deg);
+}
+
+.reset {
+  padding:8px 10px; border-radius:10px; border:1px solid var(--border);
+  background:transparent; color:var(--muted-strong); cursor:pointer;
+}
+.reset:hover { background:var(--panel-ghost); }

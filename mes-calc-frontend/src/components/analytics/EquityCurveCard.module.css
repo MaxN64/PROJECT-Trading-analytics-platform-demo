@@ -1,0 +1,8 @@
+.card{ border:1px solid var(--border); border-radius:12px; padding:12px; background:var(--panel); }
+.head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+.kpis{ display:flex; gap:12px; color:var(--muted-strong); }
+.dd{ color:#f59e0b; }
+.chartRow{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.chartBox{ border:1px dashed var(--border); border-radius:10px; padding:6px; background:var(--panel-ghost); }
+.caption{ font-size:12px; color:var(--muted); margin:2px 4px 6px; }
+@media (max-width: 900px){ .chartRow{ grid-template-columns:1fr; } }

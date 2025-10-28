@@ -1,0 +1,9 @@
+.formGrid {
+  display:grid; gap:10px;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  
+  
+}
+.selectField { display:flex; flex-direction:column; gap:6px; }
+.select { padding:8px 10px; border-radius:10px; border:1px solid var(--border); background:var(--input-bg); color:var(--fg); }
+.formulaBox { margin-top:8px; opacity:.85; font-size:12px; }

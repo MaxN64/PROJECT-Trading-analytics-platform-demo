@@ -1,0 +1,86 @@
+/* Липкая шапка (вся панель) */
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 24px;           /* горизонтальные отступы по краям шапки */
+}
+
+/* Одна строка: 1fr | auto | 1fr  (центр всегда по оси) */
+.bar {
+  width: 100%;                 /* ОБЯЗАТЕЛЬНО: растянуть полосу */
+  max-width: 100%;           /* как основной контейнер страницы */
+  margin: 0 auto;             
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Левая часть — заголовок */
+.left {
+  justify-self: start;
+  min-width: 0;                /* не даём ломать сетку */
+  overflow: hidden;
+  
+   
+}
+
+/* Центр — блок "Производительность" */
+.center {
+  justify-self: center;
+  min-width: 0;
+ 
+}
+
+/* Правая часть — кнопка TradingView + переключатель темы */
+.right {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;  
+    /* чтобы кнопки не переносились */
+}
+
+/* Блок заголовка */
+.titleBox { display: flex; flex-direction: column; gap: 2px; }
+.title     { margin: 0; font-size: 25px; font-weight: 900; color: var(--fg-strong); }
+.subtitle  { margin: 0; opacity: .7; font-size: 12px; color: var(--muted); }
+
+/* Кнопка темы справа */
+.themeBtn {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel);
+  color: var(--fg);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.themeBtn:hover { background: var(--panel-ghost); }
+
+.aiBtn {
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: linear-gradient(180deg, #1ea4ff 0%, #0c8de6 100%);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.aiBtn:hover { filter: brightness(1.05); }
+
+
+/* (опционально) на очень узких экранах можно разрешить перенос на строки */
+/*
+@media (max-width: 720px) {
+  .bar { grid-template-columns: 1fr; row-gap: 8px; }
+  .left   { justify-self: start; }
+  .center { justify-self: start; }
+  .right  { justify-self: end; }
+}
+*/

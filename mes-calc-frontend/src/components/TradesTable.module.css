@@ -1,0 +1,121 @@
+/* ===== открытая панель ===== */
+.wrap {
+  position: fixed;
+  /* задай ту же вертикаль, что и раньше; можно вынести в переменную */
+  top: 540px;
+  left: 24px;
+
+  /* эластичная ширина, чтобы не распирать лэйаут */
+  width: clamp(280px, 28vw, 520px);
+  max-height: calc(100svh - 120px);
+
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 10px 26px -12px rgba(0,0,0,.6);
+  overflow: hidden;
+  z-index: 24;
+
+  /* изоляция: панель не влияет на общую ширину/перерасчёт */
+  contain: layout paint;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: var(--panel-ghost);
+  border-bottom: 1px solid var(--border);
+}
+.title { font-size: 14px; font-weight: 700; color: var(--fg-strong); }
+.actions { display: flex; align-items: center; gap: 8px; }
+
+.expandBtn {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--fg);
+  padding: 2px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.expandBtn:hover { background: var(--panel-ghost); }
+
+.count {
+  min-width: 28px; height: 24px; padding: 0 8px;
+  border-radius: 999px; background: var(--accent); color: #0b0c10;
+  font-weight: 800; display: flex; align-items: center; justify-content: center;
+}
+
+.closeBtn {
+  border: none;
+  background: transparent;
+  color: var(--fg);
+  font-size: 16px;
+  cursor: pointer;
+}
+.closeBtn:hover { color: #ef4444; }
+
+.empty { padding: 14px; color: var(--muted); font-size: 13px; }
+
+.table { overflow: auto; max-height: 65vh; max-width: 100%; }
+/* 5 видимых колонок: # / время / SL / контрактов / прибыль? */
+.tr { display: grid; grid-template-columns: 44px 110px 70px 110px 120px; gap: 8px; padding: 8px 10px; }
+.th { position: sticky; top: 0; background: var(--panel-ghost); border-bottom: 1px solid var(--border); z-index: 1; }
+.td { font-size: 13px; color: var(--fg); align-self: center; }
+
+/* чекбокс-метка результата */
+.profitBox { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+.profitBox input { display: none; }
+.chk {
+  width: 16px; height: 16px; border-radius: 5px; border: 1px solid var(--border);
+  background: var(--input-bg); position: relative;
+}
+.profitBox input:checked + .chk { background: var(--accent); border-color: var(--accent); }
+.profitBox input:checked + .chk::after {
+  content: ""; position: absolute; left: 4px; top: 1px; width: 4px; height: 8px;
+  border: solid #0b0c10; border-width: 0 2px 2px 0; transform: rotate(45deg);
+}
+.profit { color: #22c55e; font-weight: 700; }
+.loss { color: #ef4444; font-weight: 700; }
+
+.del { border: none; background: transparent; color: var(--muted); cursor: pointer; font-size: 16px; }
+.del:hover { color: #ef4444; }
+
+@media (max-width: 1200px) {
+  .wrap { display: none; }
+}
+
+/* ===== свернутая «пилюля» слева (как у правой панели) ===== */
+.collapsed {
+  position: fixed;
+  top: 488px;                /* держим ту же вертикаль, что и у открытой панели */
+  left: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 12px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--fg);
+  cursor: pointer;
+  z-index: 24;
+
+  box-shadow: 0 10px 26px -12px rgba(0,0,0,.6);
+  contain: layout paint;
+}
+
+.collapsed:hover { background: var(--panel-ghost); }
+
+.collapsedIcon { font-size: 14px; }
+.collapsedText { font-size: 14px; font-weight: 700; }
+
+.collapsedBadge {
+  min-width: 22px; height: 20px; padding: 0 6px;
+  border-radius: 999px; background: var(--accent); color: #0b0c10;
+  font-weight: 800; display: inline-flex; align-items: center; justify-content: center;
+  font-size: 12px;
+}

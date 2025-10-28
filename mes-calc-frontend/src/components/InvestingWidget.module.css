@@ -1,0 +1,17 @@
+.frameBox {
+  background: #0d0d0d;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+.powered {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 4px;
+  text-align: right;
+}
+.powered a {
+  color: #4da3ff;
+  font-weight: bold;
+}

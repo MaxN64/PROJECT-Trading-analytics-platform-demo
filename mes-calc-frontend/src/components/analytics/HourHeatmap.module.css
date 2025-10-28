@@ -1,0 +1,18 @@
+.wrap { display:grid; gap:8px; }
+.head { color: var(--muted-strong); }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0,1fr));
+  gap: 6px;
+}
+.cell {
+  border:1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px;
+  background: var(--panel-ghost);
+}
+.h { font-size: 12px; color: var(--muted-strong); }
+.v { font-weight:700; }
+@media (max-width: 900px){
+  .grid { grid-template-columns: repeat(6, minmax(0,1fr)); }
+}

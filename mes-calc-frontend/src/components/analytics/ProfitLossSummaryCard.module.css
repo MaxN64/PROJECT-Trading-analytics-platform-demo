@@ -1,0 +1,62 @@
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 8px 24px -12px rgba(0,0,0,.25);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.title {
+  margin: 0;
+  font-weight: 700;
+  color: var(--fg-strong);
+  font-size: 16px;
+}
+
+.totalCount {
+  padding: 2px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--muted-strong);
+  background: var(--panel-ghost);
+}
+
+.grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+}
+@media (max-width: 800px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+  background: var(--panel-ghost);
+}
+
+.label {
+  font-size: 12px;
+  color: var(--muted-strong);
+  margin-bottom: 6px;
+}
+
+.value {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  color: var(--fg);
+}
+
+.profit { color: #10b981; } /* зелёный */
+.loss   { color: #ef4444; } /* красный */

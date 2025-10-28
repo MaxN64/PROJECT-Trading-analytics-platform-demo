@@ -1,0 +1,66 @@
+/* Font (можешь заменить на свой любимый) */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+:root {
+  --bg: #e6e4e4;
+  --fg: #161616;
+  --fg-strong: #0e0e0e;
+  --muted: #6b7280;
+  --muted-strong: #4b5563;
+  --placeholder: #9aa3b2;
+
+  --panel: #ffffff;
+  --panel-ghost: #f6f7f9;
+  --border: #e5e7eb;
+
+  --input-bg: #fff;
+  --input-bg-focus: #fff;
+
+  --accent: #2563eb;
+  --focus-ring: rgba(37, 99, 235, 0.15);
+
+  --warn-bg: #fff7ed;
+  --warn-border: #fed7aa;
+  --warn-fg: #9a3412;
+}
+
+:root[data-theme="dark"] {
+  --bg: #3258f1;
+  --fg: #e7e9ee;
+  --fg-strong: #ffffff;
+  --muted: #9aa3b2;
+  --muted-strong: #c1c6d1;
+  --placeholder: #8792a5;
+
+  --panel: #1c1f2a;
+  --panel-ghost: #0e1118;
+  --border: #232635;
+
+  --input-bg: #0e1118;
+  --input-bg-focus: #121624;
+
+  --accent: #60a5fa;
+  --focus-ring: rgba(96, 165, 250, 0.2);
+
+  --warn-bg: #2a170b;
+  --warn-border: #5f361f;
+  --warn-fg: #ffd2a8;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

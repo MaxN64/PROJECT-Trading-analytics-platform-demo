@@ -1,0 +1,47 @@
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 8px 24px -12px rgba(0,0,0,.25);
+  /* важное: карточка не должна «влиять» на размеры соседей и на ширину страницы */
+  contain: layout paint;      /* изоляция от внешних перерасчётов */
+  max-width: 100%;
+  /* border: 3px rgb(34, 180, 71) solid; */
+}
+
+/* внутренний контейнер, который можно прокручивать, если высота фиксирована */
+.body {
+  min-height: 0;              /* чтобы у вложенных grids/overflow всё корректно работало */
+  max-width: 90%;
+  font-weight: 600;
+}
+
+/* фиксированная большая карточка (расчёт по SL) */
+.fixedLarge {
+  /* подберите значение под «как выглядит сейчас» */
+  height: clamp(340px, 36vh, 420px);
+  overflow: hidden;           /* скрываем наружу */
+}
+.fixedLarge .body {
+  height: calc(100% - 22px);  /* 32px ~ высота заголовка + отступы, при необходимости поправьте */
+  overflow: auto;             /* прокрутка внутри */
+}
+
+/* фиксированная маленькая карточка (Текущие значения) */
+.fixedSmall {
+  height: clamp(120px, 16vh, 180px);
+  overflow: hidden;
+}
+.fixedSmall .body {
+  height: calc(100% - 32px);
+  overflow: auto;
+}
+
+/* заголовок оставляем как у вас */
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--fg-strong);
+  margin-bottom: 10px;
+}

@@ -1,0 +1,3 @@
+.card{ border:1px solid var(--border); border-radius:12px; padding:12px; background:var(--panel); }
+.head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:6px; }
+.sel{ border:1px solid var(--border); border-radius:8px; background:var(--input-bg); color:var(--fg); padding:4px 6px; }

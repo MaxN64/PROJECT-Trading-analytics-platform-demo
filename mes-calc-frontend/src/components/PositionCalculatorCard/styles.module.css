@@ -1,0 +1,39 @@
+.formGrid {
+  display:grid; gap:10px;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  
+}
+
+.statsGrid {
+  display:grid; gap:10px; margin-top:8px;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  
+}
+
+.stopBanner {
+  background: rgba(239, 68, 68, .1);
+  border: 1px solid rgba(239, 68, 68, .5);
+  color:#ef4444;
+  padding:8px 10px; border-radius:10px; margin-bottom:10px;
+  font-weight:700;
+  
+}
+
+.riskBlock { margin-top:8px; display:grid; gap:8px; }
+.riskInputs { display:grid; gap:8px; grid-template-columns: 260px 1fr; }
+.riskStats {
+  display:grid; gap:8px;
+  grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+  
+}
+.noteWarn {
+  border-radius:10px; padding:8px 10px;
+  border:1px dashed var(--border);
+  background: var(--panel-ghost);
+  color: var(--muted-strong);
+   color:#ef4444;
+  
+}
+@media (max-width:900px){
+  .riskInputs { grid-template-columns: 1fr; }
+}

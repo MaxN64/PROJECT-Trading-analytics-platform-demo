@@ -1,0 +1,37 @@
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0 8px 24px -12px rgba(0,0,0,.25);
+  /* можно растянуть на всю строку */
+  grid-column: 1 / -1;
+}
+
+.head { display:flex; align-items:center; justify-content:space-between; margin-bottom: 8px; }
+.head h3 { margin:0; font-size:16px; font-weight:700; color:var(--fg-strong); }
+
+.controls { display:flex; align-items:center; gap:10px; }
+.inline { display:inline-flex; align-items:center; gap:6px; font-size:12px; color:var(--muted-strong); }
+.input {
+  width:72px; padding:6px 8px; border-radius:10px; border:1px solid var(--border);
+  background: var(--input-bg); color: var(--fg);
+}
+.btn {
+  padding:8px 10px; border-radius:10px; border:1px solid var(--border);
+  background: var(--accent); color:#0b0c10; font-weight:800; cursor:pointer;
+}
+
+.table { overflow:auto; border:1px solid var(--border); border-radius:12px; }
+.tr { display:grid; grid-template-columns: 2fr repeat(6, minmax(120px, 1fr)); gap:8px; padding:8px 10px; }
+.th { position:sticky; top:0; background:var(--panel-ghost); border-bottom:1px solid var(--border); z-index:1; }
+.td { font-size:13px; color:var(--fg); align-self:center; }
+.cond { color:var(--fg-strong); }
+
+.tdBtn {
+  background:transparent; border:none; text-align:left; color:var(--fg);
+  font-size:13px; cursor:pointer; padding:0;
+}
+.tdBtn:hover { color:var(--fg-strong); }
+
+.empty { padding:12px; color:var(--muted); font-size:13px; }

@@ -1,0 +1,41 @@
+.backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.6);
+  display: grid; place-items: center;
+  z-index: 9999;
+  padding: 16px;
+}
+
+.modal {
+  width: min(720px, 96vw);
+  max-height: 92vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 12px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 12px; background: var(--panel-ghost);
+  border-bottom: 1px solid var(--border);
+}
+.header h3 { margin: 0; }
+
+.close {
+  border: none; background: transparent; color: var(--fg);
+  width: 32px; height: 32px; border-radius: 999px; cursor: pointer;
+}
+
+.body {
+  padding: 12px; overflow: auto;
+}
+
+.footer {
+  display: flex; justify-content: flex-end; gap: 8px;
+  padding: 10px 12px; background: var(--panel-ghost);
+  border-top: 1px solid var(--border);
+}

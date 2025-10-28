@@ -1,0 +1,82 @@
+.page {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background: var(--bg, #0b1e62);
+  color: var(--fg, #e8ecff);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border, rgba(255,255,255,.12));
+  background: rgba(0,0,0,.2);
+  backdrop-filter: blur(6px);
+}
+
+.left {
+  display: grid;
+  gap: 4px;
+}
+.title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+.note {
+  margin: 0;
+  opacity: .8;
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn, .btnRed {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,.18);
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+.btn {
+  background: linear-gradient(135deg, #1976d2, #00bcd4);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0,188,212,.22);
+}
+.btnRed {
+  background: linear-gradient(135deg, #d32f2f, #ff7043);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(255,112,67,.22);
+}
+.btn:hover, .btnRed:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.split {
+  display: grid;
+  grid-template-rows: 1fr 1fr; /* две половины */
+  height: 100%;
+}
+
+.half {
+  min-height: 0; /* важно, чтобы виджет растягивался */
+  border-top: 1px solid var(--border, rgba(255,255,255,.08));
+  position: relative;
+}
+
+.tv {
+  position: absolute;
+  inset: 0;
+}

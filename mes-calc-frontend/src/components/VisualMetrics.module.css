@@ -1,0 +1,120 @@
+/* раскладка карточки: слева блок с круговой диаграммой, справа — тепловая карта */
+.wrap {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  justify-self: stretch;  /* если родитель — grid */
+ align-self: stretch;    /* если родитель — grid/flex */
+  /* border: 3px red solid; */
+  grid-template-columns: minmax(220px, fit-content(320px)) minmax(0, 1fr);
+
+}
+.wrap > * { min-width: 0; }   /* важно для сжатия справа */
+
+
+
+@media (max-width: 1100px) {
+  .wrap { grid-template-columns: 1fr; }
+}
+
+/* PIE */
+.pieBlock {
+  min-width: 220px;
+ max-width: 320px;
+  display:flex; 
+  flex-direction:column; 
+  gap:10px; }
+
+.pieTitle { font-weight:700; opacity:.9; }
+.pieChart {
+  position: relative;
+  width: 160px; height: 160px;
+  display:flex; align-items:center; justify-content:center;
+  margin-top: 4px;
+}
+.pieSvg { display:block; }
+.pieCenter {
+  position:absolute; inset:0; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; pointer-events:none;
+}
+.pct { font-size:26px; font-weight:800; line-height:1; }
+.note { font-size:12px; opacity:.7; margin-top:2px; }
+.pieLegend { display:flex; flex-direction:column; gap:6px; font-size:14px; }
+.lItem { display:flex; align-items:center; gap:8px; }
+.dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
+
+/* HEATMAP */
+.hmBlock { display:flex; flex-direction:column; gap:10px; }
+.hmHeader { font-weight:700; opacity:.95; }
+.hmSub { font-weight:400; opacity:.7; margin-left:6px; font-size:12px; }
+.hmBlock, .hmTableWrap { width: 100%; }
+
+
+/* локальный скролл, если колонок слишком много */
+.hmTableWrap { overflow:auto; border-radius:12px; border:1px solid var(--border); }
+
+/* ширины столбцов и «табличная» фиксация выбора */
+.hmTable {
+  border-collapse: separate;
+  border-spacing: 1px;
+  width: 100%;
+  table-layout: fixed;  /* чтобы colgroup задавал реальные ширины */
+  background: var(--panel-ghost);
+  /* общая минимальная ширина матрицы: ширина первой колонки + N*ширина остальных */
+  --firstCol: 150px;
+  --colW: 150px;
+  min-width: calc(var(--firstCol) + var(--cols, 6) * var(--colW));
+}
+
+/* colgroup управляет ширинами */
+.colFirst { width: var(--firstCol); }
+.col { width: var(--colW); }
+
+.hmTable th, .hmTable td {
+  padding: 10px 12px;
+  text-align: center;
+  /* показываем ВСЁ: переносы и разрыв длинных слов */
+  white-space: normal;
+  word-break: break-word;
+  overflow: visible;
+  background: var(--panel);
+  color: var(--fg);
+}
+
+/* прилипающие заголовки */
+.hmTable th:first-child {
+  position: sticky;
+  left: 0;
+  background: var(--panel-strong);
+  z-index: 2;
+}
+.hmTable thead th {
+  position: sticky;
+  top: 0;
+  background: var(--panel-strong);
+  z-index: 1;
+}
+
+.diag { background: var(--panel-ghost) !important; color: var(--muted); }
+
+.cell {
+  font-weight: 700;
+  transition: transform .05s ease;
+}
+.cell:hover { transform: scale(1.03); }
+
+.legendRow {
+  display:flex; align-items:center; gap:10px;
+  padding: 8px 6px;
+}
+.gradientBar {
+  flex:1 1 auto; height:10px; border-radius:8px;
+  background: linear-gradient(90deg,
+    hsl(0 70% 55%) 0%,
+    hsl(45 70% 50%) 35%,
+    hsl(90 70% 45%) 100%
+  );
+  border:1px solid var(--border);
+}
+.hmEmpty { opacity:.7; font-size:14px; padding:6px 2px; }

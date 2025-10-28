@@ -1,0 +1,23 @@
+.field { display: grid; gap: 6px; }
+.label { font-size: 13px; color: var(--muted-strong); }
+
+.input {
+  appearance: none;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--input-bg);
+  color: var(--fg);
+  outline: none;
+  transition: border-color .15s, box-shadow .15s, background .15s;
+  
+}
+.input::placeholder { color: var(--placeholder); }
+.input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 6px var(--focus-ring);
+  background: var(--input-bg-focus);
+}
+
+.hint { font-size: 11px; color: var(--muted); }
